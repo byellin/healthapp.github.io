@@ -1,0 +1,35 @@
+<html>
+<body>
+
+<input type="text" id="est_blood_loss"=>Enter the patient's estimated blood loss</input>
+<br>
+<input type="text" id="lmap"=>Enter the patient's lowest mean arterial pressure</input>
+<br>
+<input type="text" id="lhr"=>Enter the patient's lowest heart rate</input>
+<br>
+<button onclick="test()">Submit</button>
+
+
+<p id="demo"></p>
+
+<script type="text/javascript">
+	//var userInput;
+	function test()
+	{
+		var est_blood_loss = parseInt(document.getElementById("est_blood_loss").value);
+		var lmap = parseInt(document.getElementById("lmap").value);
+		var lhr = parseInt(document.getElementById("lhr").value);
+		console.log((est_blood_loss)+(lmap)+(lhr));
+	}
+
+	//var userInput2;
+	
+
+
+	
+
+</script>
+
+
+</body>
+</html>
