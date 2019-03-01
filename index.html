@@ -21,28 +21,44 @@
 		var est_blood_loss = parseInt(document.getElementById("est_blood_loss").value);
 		var lmap = parseInt(document.getElementById("lmap").value);
 		var lhr = parseInt(document.getElementById("lhr").value);
-		if (est_blood_loss<=100){
+		
+		if (est_blood_loss <= 100){
 			SAS += 3
 		}
-		if (est_blood_loss>100 && est_blood_loss<=600){
+		if (est_blood_loss > 100 && est_blood_loss <= 600){
 			SAS += 2
 		}
-		if (est_blood_loss>600 && est_blood_loss<=1000){
+		if (est_blood_loss > 600 && est_blood_loss <= 1000){
 			SAS += 1
 		}
-		if (est_blood_loss>1000){
+		if (est_blood_loss > 1000){
 			SAS += 0
 		}
-		if (lmap>=70){
+		if (lmap >= 70){
 			SAS += 3
 		}
-		if (lmap>=55 && lmap<=69){
+		if (lmap >= 55 && lmap <= 69){
 			SAS += 2
 		}
-		if (lmap>=40 && lmap<=54){
+		if (lmap >= 40 && lmap <= 54){
 			SAS += 1
 		}
-		if (lmap<40){
+		if (lmap < 40){
+			SAS += 0
+		}
+		if (lhr <= 55){
+			SAS += 4
+		}
+		if (lhr >= 56 && lhr <= 65){
+			SAS += 3
+		}
+		if (lhr >= 66 && lhr <= 75){
+			SAS += 2
+		}
+		if (lhr >= 76 && lhr <= 85){
+			SAS += 1
+		}
+		if (lhr > 85){
 			SAS += 0
 		}
 		console.log(SAS);
