@@ -1,12 +1,13 @@
 <html>
 <body>
 
-<input type="text" id="est_blood_loss"=>Enter the patient's est. blood loss</input>
+<input type="text" id="est_blood_loss"=>Enter the patient's est. blood loss.</input>
 <br>
-<input type="text" id="lmap"=>Enter the patient's lowest mean arterial pressure</input>
+<input type="text" id="lmap"=>Enter the patient's lowest mean arterial pressure.</input>
 <br>
-<input type="text" id="lhr"=>Enter the patient's lowest heart rate</input>
+<input type="text" id="lhr"=>Enter the patient's lowest heart rate.</input>
 <br>
+<input type="text" id= </input>
 <button onclick="test()">Submit</button>
 
 
@@ -16,10 +17,24 @@
 	//var userInput;
 	function test()
 	{
+		var SAS = 0
 		var est_blood_loss = parseInt(document.getElementById("est_blood_loss").value);
 		var lmap = parseInt(document.getElementById("lmap").value);
 		var lhr = parseInt(document.getElementById("lhr").value);
-		console.log((est_blood_loss)+(lmap)+(lhr));
+		if (est_blood_loss<=100){
+			SAS += 3
+		}
+		if (est_blood_loss>100 || est_blood_loss<=600){
+			SAS += 2
+		}
+		if (est_blood_loss>600 || est_blood_loss<=1000){
+			SAS += 1
+		}
+		if (est_blood_loss>1000){
+			SAS += 0
+		}
+
+		console.log(SAS);
 	}
 
 	//var userInput2;
