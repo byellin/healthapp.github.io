@@ -1,7 +1,7 @@
 <html>
 <body>
 
-<input type="text" id="est_blood_loss"=>Enter the patient's est. blood loss.</input>
+<input type="text" id="est_blood_loss"=>Enter the patient's estimated blood loss.</input>
 <br>
 <input type="text" id="lmap"=>Enter the patient's lowest mean arterial pressure.</input>
 <br>
@@ -24,16 +24,27 @@
 		if (est_blood_loss<=100){
 			SAS += 3
 		}
-		if (est_blood_loss>100 || est_blood_loss<=600){
+		if (est_blood_loss>100 && est_blood_loss<=600){
 			SAS += 2
 		}
-		if (est_blood_loss>600 || est_blood_loss<=1000){
+		if (est_blood_loss>600 && est_blood_loss<=1000){
 			SAS += 1
 		}
 		if (est_blood_loss>1000){
 			SAS += 0
 		}
-
+		if (lmap>=70){
+			SAS += 3
+		}
+		if (lmap>=55 && lmap<=69){
+			SAS += 2
+		}
+		if (lmap>=40 && lmap<=54){
+			SAS += 1
+		}
+		if (lmap<40){
+			SAS += 0
+		}
 		console.log(SAS);
 	}
 
