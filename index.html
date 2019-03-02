@@ -1,76 +1,36 @@
 <html>
+
 <body>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
 
-<input type="text" id="est_blood_loss"=>Enter the patient's estimated blood loss.</input>
-<br>
-<input type="text" id="lmap"=>Enter the patient's lowest mean arterial pressure.</input>
-<br>
-<input type="text" id="lhr"=>Enter the patient's lowest heart rate.</input>
-<br>
-<input type="text" id= </input>
-<button onclick="test()">Submit</button>
-
-
-<p id="demo"></p>
-
-<script type="text/javascript">
-	//var userInput;
-	function test()
-	{
-		var SAS = 0
-		var est_blood_loss = parseInt(document.getElementById("est_blood_loss").value);
-		var lmap = parseInt(document.getElementById("lmap").value);
-		var lhr = parseInt(document.getElementById("lhr").value);
-		
-		if (est_blood_loss <= 100){
-			SAS += 3
-		}
-		if (est_blood_loss > 100 && est_blood_loss <= 600){
-			SAS += 2
-		}
-		if (est_blood_loss > 600 && est_blood_loss <= 1000){
-			SAS += 1
-		}
-		if (est_blood_loss > 1000){
-			SAS += 0
-		}
-		if (lmap >= 70){
-			SAS += 3
-		}
-		if (lmap >= 55 && lmap <= 69){
-			SAS += 2
-		}
-		if (lmap >= 40 && lmap <= 54){
-			SAS += 1
-		}
-		if (lmap < 40){
-			SAS += 0
-		}
-		if (lhr <= 55){
-			SAS += 4
-		}
-		if (lhr >= 56 && lhr <= 65){
-			SAS += 3
-		}
-		if (lhr >= 66 && lhr <= 75){
-			SAS += 2
-		}
-		if (lhr >= 76 && lhr <= 85){
-			SAS += 1
-		}
-		if (lhr > 85){
-			SAS += 0
-		}
-		console.log(SAS);
-	}
-
-	//var userInput2;
-	
+<div class="container">
+	<div class="row">
+		<div class="col">
+			<div class="card mt-5 mb-5">
+				<div class="card-body">
+					<h1>Patient Observation Sorter</h1>
+						<table id="data_table" class="display" width="100%"></table>
+						
+						<div class="form-group">
+							<button class="btn btn-block btn-primary" id="submit">Update</button>
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 
-	
-
-</script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdn.rawgit.com/smart-on-fhir/client-js/v0.1.8/dist/fhir-client.js"></script>
+<script src="js/demo-settings.js" type="text/javascript"></script>
+<script src="js/get-data.js" type="text/javascript"></script>
 
 
 </body>
